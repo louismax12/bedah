@@ -1,0 +1,271 @@
+/* 
+ * Semantic Print CSS 
+ * Digunakan untuk layout cetak A4 (Rekam Medis)
+ */
+@media print {
+    body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .container {
+        margin: 0 !important;
+        padding: 1cm !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10pt;
+    color: #334155;
+    background: #f1f5f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 21cm;
+    min-height: 29.7cm; /* A4 height */
+    margin: 2cm auto;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 1.5cm 2cm;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* KOP SURAT */
+.kop-surat {
+    display: table;
+    width: 100%;
+    margin-bottom: 0.5cm;
+    padding-bottom: 10px;
+}
+.kop-surat-logo {
+    display: table-cell;
+    vertical-align: middle;
+    width: 80px;
+}
+.kop-surat-logo img {
+    width: 70px;
+    height: auto;
+}
+.kop-surat-text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 15px;
+}
+.kop-surat-text h1 {
+    font-size: 14pt;
+    font-weight: 800;
+    margin: 0;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.kop-surat-text h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    margin: 2px 0 5px 0;
+    color: #1e293b;
+}
+.kop-surat-text p {
+    margin: 0;
+    font-size: 8pt;
+    color: #64748b;
+    line-height: 1.3;
+}
+
+/* DECORATION LINES */
+.header-line {
+    height: 3px;
+    background: #0f172a;
+    margin-bottom: 2px;
+    border-radius: 2px;
+}
+.header-line-thin {
+    height: 1px;
+    background: #334155;
+    margin-bottom: 20px;
+}
+
+/* TITLE */
+.document-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.document-title h3 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0;
+    text-decoration: underline;
+    color: #0f172a;
+}
+.document-title p {
+    margin: 5px 0 0 0;
+    font-size: 10pt;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* INFO SECTIONS */
+.info-section {
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 9.5pt;
+}
+.info-col {
+    display: table-cell;
+    width: 50%;
+    padding-right: 15px;
+    vertical-align: top;
+}
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.info-table td {
+    padding: 3px 0;
+    vertical-align: top;
+}
+.info-table td:first-child {
+    width: 120px;
+    color: #475569;
+    font-weight: 600;
+}
+.info-table td:nth-child(2) {
+    width: 10px;
+}
+.info-table td:last-child {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* SECTION HEADERS */
+.section-title {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #1e293b;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+/* ANAMNESIS DATA */
+.anamnesis-grid {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.anamnesis-item {
+    margin-bottom: 10px;
+}
+.anamnesis-label {
+    font-size: 8pt;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.anamnesis-value {
+    font-size: 9.5pt;
+    color: #0f172a;
+    background: #f8fafc;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+/* BODY MAPPING */
+.canvas-container {
+    position: relative;
+    width: 360px;
+    height: 430px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.canvas-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.canvas-title {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+.svg-canvas {
+    width: 130px;
+    height: auto;
+    margin: 0 auto;
+    stroke: #475569;
+}
+.pin {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #ef4444; 
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 8pt;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+/* PINS TABLE */
+table.pins-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    margin-bottom: 20px;
+}
+table.pins-table th {
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+    font-weight: 600;
+}
+table.pins-table td {
+    padding: 6px 8px;
+    border: 1px solid #cbd5e1;
+    vertical-align: middle;
+}
+table.pins-table th:first-child,
+table.pins-table td:first-child {
+    width: 40px;
+    text-align: center;
+}
+
+/* FOOTER INFO */
+.print-footer {
+    margin-top: 30px;
+    font-size: 8pt;
+    color: #94a3b8;
+    text-align: center;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 10px;
+}
